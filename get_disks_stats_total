@@ -1,0 +1,81 @@
+#!/bin/bash
+
+#
+# Get to total using the disk type (see lsblk)
+#
+# https://www.kernel.org/doc/Documentation/iostats.txt
+#
+# To avoid introducing performance bottlenecks, no locks are held while
+# modifying these counters.  This implies that minor inaccuracies may be
+# introduced when changes collide, so (for instance) adding up all the
+# read I/Os issued per partition should equal those made to the disks ...
+# but due to the lack of locking it may only be very close.
+#
+
+TYPE=$1
+STAT=$2
+TOTAL_DEV=0
+TOTAL=0
+
+case $STAT in
+        read.ops)
+                COLUMN=4
+        ;;
+        read.ops)
+                COLUMN=4
+        ;;
+        read.merged)
+                COLUMN=5
+        ;;
+        read.sectors)
+                COLUMN=6
+        ;;
+        read.ms)
+                COLUMN=7
+        ;;
+        write.ops)
+                COLUMN=8
+        ;;
+        write.merged)
+                COLUMN=9
+        ;;
+        write.sectors)
+                COLUMN=10
+        ;;
+        write.ms)
+                COLUMN=11
+        ;;
+        io.active)
+                COLUMN=12
+        ;;
+        io.ms)
+                COLUMN=13
+        ;;
+        weight.io.ms)
+                COLUMN=14
+        ;;
+        *)
+                echo -e "\n$0 <type> <stat.type>"
+                echo -e "\nstat.type options\n"
+                echo -e "\tread.ops"
+                echo -e "\tread.merged"
+                echo -e "\tread.sectors"
+                echo -e "\tread.ms"
+                echo -e "\twrite.ops"
+                echo -e "\twrite.merged"
+                echo -e "\twrite.sectors"
+                echo -e "\twrite.ms"
+                echo -e "\tio.active"
+                echo -e "\tio.ms"
+                echo -e "\tweight.io.ms\n"
+                exit
+        ;;
+esac
+
+for device in `lsblk -no TYPE,KNAME | awk -v type="$TYPE" '{if ($1 == type) print $2 }'`
+do
+        TOTAL_DEV=`awk -v dev="$device" -v column=$COLUMN '{if ($3 == dev) print $column}' /proc/diskstats`
+        TOTAL=$(($TOTAL + $TOTAL_DEV))
+done
+
+echo $TOTAL
