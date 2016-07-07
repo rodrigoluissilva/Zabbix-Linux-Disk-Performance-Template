@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Autodiscovery disks using /proc/diskstats
+# All disks are returned
+#
+echo -n "{\"data\":["
+
+cat /proc/diskstats | while read line
+do
+        DATA_DISKS=(`echo $line | awk '{print $1 " " $2 " " $3}'`)
+        MAJOR=${DATA_DISKS[0]}
+        MINOR=${DATA_DISKS[1]}
+        DISK=${DATA_DISKS[2]}
+
+        if [ -f /sys/dev/block/$MAJOR:$MINOR/dm/name ]; then
+                DMNAME=(`cat /sys/dev/block/$MAJOR:$MINOR/dm/name`)
+                DEV="/dev/mapper/${DMNAME}"
+        else
+                DMNAME=${DISK}
+                DEV="/dev/${DMNAME}"
+        fi
+
+        echo -n "$COMMA{\"{#DISK}\":\"${DISK}\",\"{#DISKDEV}\":\"${DEV}\",\"{#DMNAME}\":\"${DMNAME}\"}"
+        COMMA=","
+
+done
+
+echo " ] }"
