@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-07-07T13:23:47Z</date>
+    <date>2016-10-20T12:05:17Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -24,14 +24,14 @@
             </applications>
             <items>
                 <item>
-                    <name>Total Disk Perf Read IO/sec</name>
+                    <name>Disk Perf Total Read IO/sec</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>custom.vfs.dev.total[disk,read.ops]</key>
                     <delay>60</delay>
-                    <history>90</history>
+                    <history>14</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
@@ -67,14 +67,14 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Total Disk Perf Read Bytes/sec</name>
+                    <name>Disk Perf Total Read Bytes/sec</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
                     <snmp_oid/>
                     <key>custom.vfs.dev.total[disk,read.sectors]</key>
                     <delay>60</delay>
-                    <history>90</history>
+                    <history>14</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
@@ -110,14 +110,14 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Total Disk Perf Write IO/sec</name>
+                    <name>Disk Perf Total Write IO/sec</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>custom.vfs.dev.total[disk,write.ops]</key>
                     <delay>60</delay>
-                    <history>90</history>
+                    <history>14</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
@@ -153,14 +153,14 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Total Disk Perf Write Bytes/sec</name>
+                    <name>Disk Perf Total Write Bytes/sec</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
                     <snmp_oid/>
                     <key>custom.vfs.dev.total[disk,write.sectors]</key>
                     <delay>60</delay>
-                    <history>90</history>
+                    <history>14</history>
                     <trends>365</trends>
                     <status>0</status>
                     <value_type>3</value_type>
@@ -245,7 +245,7 @@
                             <snmp_oid/>
                             <key>custom.vfs.dev.io.active[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -291,7 +291,7 @@ The only field that should go to zero. Incremented as requests are given to appr
                             <snmp_oid/>
                             <key>custom.vfs.dev.io.ms[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -337,7 +337,7 @@ This field increases so long as field 9 is nonzero.</description>
                             <snmp_oid/>
                             <key>custom.vfs.dev.read.merged[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -383,7 +383,7 @@ Reads and writes which are adjacent to each other may be merged for efficiency. 
                             <snmp_oid/>
                             <key>custom.vfs.dev.read.ms[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -429,7 +429,7 @@ This is the total number of milliseconds spent by all reads (as measured from __
                             <snmp_oid/>
                             <key>custom.vfs.dev.read.ops[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -475,7 +475,7 @@ This is the total number of reads completed successfully.</description>
                             <snmp_oid/>
                             <key>custom.vfs.dev.read.sectors[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -521,7 +521,7 @@ This is the total number of sectors read successfully.</description>
                             <snmp_oid/>
                             <key>custom.vfs.dev.weight.io.ms[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -567,7 +567,7 @@ This field is incremented at each I/O start, I/O completion, I/O merge, or read 
                             <snmp_oid/>
                             <key>custom.vfs.dev.write.merged[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -613,7 +613,7 @@ Reads and writes which are adjacent to each other may be merged for efficiency. 
                             <snmp_oid/>
                             <key>custom.vfs.dev.write.ms[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -659,7 +659,7 @@ This is the total number of milliseconds spent by all writes (as measured from _
                             <snmp_oid/>
                             <key>custom.vfs.dev.write.ops[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -705,7 +705,7 @@ This is the total number of writes completed successfully.</description>
                             <snmp_oid/>
                             <key>custom.vfs.dev.write.sectors[{#DISK}]</key>
                             <delay>60</delay>
-                            <history>90</history>
+                            <history>14</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>3</value_type>
@@ -747,7 +747,7 @@ This is the total number of sectors written successfully.</description>
                     <trigger_prototypes/>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Disk Perf {#DMNAME} - Bytes/sec</name>
+                            <name>Disk Perf - {#DMNAME}: Bytes/sec</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -791,7 +791,7 @@ This is the total number of sectors written successfully.</description>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Disk Perf {#DMNAME} - IO/sec</name>
+                            <name>Disk Perf - {#DMNAME}: IO/sec</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -835,7 +835,7 @@ This is the total number of sectors written successfully.</description>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Disk Perf {#DMNAME} - Merged</name>
+                            <name>Disk Perf - {#DMNAME}: Merged</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -879,7 +879,7 @@ This is the total number of sectors written successfully.</description>
                             </graph_items>
                         </graph_prototype>
                         <graph_prototype>
-                            <name>Disk Perf {#DMNAME} - Overview</name>
+                            <name>Disk Perf - {#DMNAME}: Overview</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -988,12 +988,42 @@ This is the total number of sectors written successfully.</description>
             </discovery_rules>
             <macros/>
             <templates/>
-            <screens/>
+            <screens>
+                <screen>
+                    <name>Disk Perf - Overview</name>
+                    <hsize>1</hsize>
+                    <vsize>1</vsize>
+                    <screen_items>
+                        <screen_item>
+                            <resourcetype>20</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>0</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>0</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Disk Perf - {#DMNAME}: Overview</name>
+                                <host>Template Linux Disk Performance</host>
+                            </resource>
+                            <max_columns>2</max_columns>
+                            <application/>
+                        </screen_item>
+                    </screen_items>
+                </screen>
+            </screens>
         </template>
     </templates>
     <graphs>
         <graph>
-            <name>Disk Perf Total Overview</name>
+            <name>Disk Perf - Total Overview</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
